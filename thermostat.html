@@ -31,25 +31,47 @@
 
  <script src="jquery_copy.js"></script>
  <script>
+
  $(function() {
 
    var thermostat = new Thermostat();
    $('.display_temp').text(thermostat.temperature);
 
    $('#increase_button')
-   .on('mousedown', function() {
+     .on('mousedown', function() {
      $(this).css("background-color", "green")
        thermostat.up()
      $('.display_temp').text(thermostat.temperature)
    });
 
    $('#increase_button')
-   .on('mouseup', function() {
+     .on('mouseup', function() {
      $(this).css("background-color", "white")
 
    });
 
-   
+       $('#decrease_button')
+         .on('mousedown', function(){
+         $(this).css("background-color", "red")
+           thermostat.down()
+         $('.display_temp').text(thermostat.temperature)
+       });
+
+       $('#decrease_button')
+         .on('mouseup', function(){
+       $(this).css("background-color", "white")
+       $('.display_temp').text(thermostat.temperature)
+
+   });
+
+   // $('#power_saver_button')
+   //   .on('click', function(){
+   // $(this).css("background-color", 'black')
+   // $(this).css("color", 'white')
+   //   thermostat.isPowerSaving()
+   // $('.display_temp').text(thermostat.temperature)
+   // });
+
 
  });
  </script>
