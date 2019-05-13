@@ -19,9 +19,10 @@
     </div>
     <div class="Control_Panel">
       <p>
-        <button type="button" id="increase_button" name="increase">+</button>
-        <button type="button" id="decrease_button" name="decrease">-</button>
-        <button type="button" id="power_saver_button" name="power saver">Power Saver</button>
+        <button type="button" id="increase_button" name="Increase">+</button>
+        <button type="button" id="decrease_button" name="Decrease">-</button>
+        <button type="button" id="power_saver_button_on" name="Power Saver On">Power Saver On</button>
+        <button type="button" id="power_saver_button_off" name="Power Saver On">Power Saver Off</button>
         <button type="button" id="reset_button" name="reset">Reset</button>
       </p>
 
@@ -29,49 +30,5 @@
 </body>
 </html>
 
- <script src="jquery_copy.js"></script>
- <script>
-
- $(function() {
-
-   var thermostat = new Thermostat();
-   $('.display_temp').text(thermostat.temperature);
-
-   $('#increase_button')
-     .on('mousedown', function() {
-     $(this).css("background-color", "green")
-       thermostat.up()
-     $('.display_temp').text(thermostat.temperature)
-   });
-
-   $('#increase_button')
-     .on('mouseup', function() {
-     $(this).css("background-color", "white")
-
-   });
-
-       $('#decrease_button')
-         .on('mousedown', function(){
-         $(this).css("background-color", "red")
-           thermostat.down()
-         $('.display_temp').text(thermostat.temperature)
-       });
-
-       $('#decrease_button')
-         .on('mouseup', function(){
-       $(this).css("background-color", "white")
-       $('.display_temp').text(thermostat.temperature)
-
-   });
-
-   // $('#power_saver_button')
-   //   .on('click', function(){
-   // $(this).css("background-color", 'black')
-   // $(this).css("color", 'white')
-   //   thermostat.isPowerSaving()
-   // $('.display_temp').text(thermostat.temperature)
-   // });
-
-
- });
- </script>
+<script src="jquery_copy.js"></script>
+<script src="src/interface.js"></script>
